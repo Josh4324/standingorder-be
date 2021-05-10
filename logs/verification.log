@@ -1,0 +1,31 @@
+Sun, 09 May 2021 16:01:31 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:01:53 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:02:12 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:02:14 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"17005957752"} | Response - INVALID ACCOUNT | 
+Sun, 09 May 2021 16:02:18 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:02:29 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:02:30 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"17005957751"} | Response - INVALID ACCOUNT | 
+Sun, 09 May 2021 16:02:32 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"170059577512"} | Response - INVALID ACCOUNT | 
+Sun, 09 May 2021 16:02:34 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775123"} | Response - INVALID ACCOUNT | 
+Sun, 09 May 2021 16:02:38 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"170059577512"} | Response - INVALID ACCOUNT | 
+Sun, 09 May 2021 16:02:39 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"17005957751"} | Response - INVALID ACCOUNT | 
+Sun, 09 May 2021 16:02:41 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:06:29 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:06:33 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:06:34 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"17005957751"} | Response - INVALID ACCOUNT | 
+Sun, 09 May 2021 16:06:36 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"170059577512"} | Response - INVALID ACCOUNT | 
+Sun, 09 May 2021 16:06:37 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"17005957751"} | Response - INVALID ACCOUNT | 
+Sun, 09 May 2021 16:06:39 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:06:42 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:21:55 GMT | INFO | verification.log | Request recieved at /api/verify/external | Request - {"DBC":"000013","AN":"0173768670","SAC":"0173768670"} | Response - ADESANYA  JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:21:57 GMT | INFO | verification.log | Request recieved at /api/verify/external | Request - {"DBC":"000013","AN":"01737686701","SAC":"01737686701"} | Response -  | 
+Sun, 09 May 2021 16:22:00 GMT | INFO | verification.log | Request recieved at /api/verify/external | Request - {"DBC":"000013","AN":"017376867012","SAC":"017376867012"} | Response -  | 
+Sun, 09 May 2021 16:22:03 GMT | INFO | verification.log | Request recieved at /api/verify/external | Request - {"DBC":"000013","AN":"01737686701","SAC":"01737686701"} | Response -  | 
+Sun, 09 May 2021 16:22:03 GMT | INFO | verification.log | Request recieved at /api/verify/external | Request - {"DBC":"000013","AN":"0173768670","SAC":"0173768670"} | Response - ADESANYA  JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:22:08 GMT | INFO | verification.log | Request recieved at /api/verify/external | Request - {"DBC":"000013","AN":"0173768670","SAC":"0173768670"} | Response - ADESANYA  JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:22:17 GMT | INFO | verification.log | Request recieved at /api/verify/external | Request - {"DBC":"000013","AN":"0173768670","SAC":"0173768670"} | Response - ADESANYA  JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:25:13 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:29:41 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Sun, 09 May 2021 16:29:52 GMT | INFO | verification.log | Request recieved at /api/verify/external | Request - {"DBC":"000013","AN":"0173768670","SAC":"0173768670"} | Response - ADESANYA  JOSHUA AYODEJI | 
+Mon, 10 May 2021 10:41:18 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - ADESANYA JOSHUA AYODEJI | 
+Mon, 10 May 2021 10:41:30 GMT | INFO | verification.log | Request recieved at /api/verify/external | Request - {"DBC":"000013","AN":"0173768670","SAC":"0173768670"} | Response - ADESANYA  JOSHUA AYODEJI | 

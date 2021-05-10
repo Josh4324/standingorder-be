@@ -349,7 +349,6 @@ StandOrder.getAdminDeclinedStandingOrder = async (req, res, next) => {
   }
 };
 
-
 StandOrder.getInputerDeactivatedStandingOrder = async (req, res, next) => {
   let userId
   try {

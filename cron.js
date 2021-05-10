@@ -12,7 +12,7 @@ module.exports = () => {
         const runcron =  async () => {
            await sql.connect(process.env.MSSQL);
            const deleteStatus = "false"
-           const check = await sql.query`SELECT * from stand_order_detail WHERE end_date = ${moment().format("YYYY-MM-DD")}`;
+           const check = await sql.query`SELECT * from stand_order_detail WHERE end_date <= ${moment().format("YYYY-MM-DD")}`;
            const checkrecords = check.recordset;
 
            checkrecords.map(async (rec) => {
@@ -101,7 +101,7 @@ module.exports = () => {
     });
 
     // running every 2 hours daily
-    cron.schedule('0 */1 * * *', () => {
+    cron.schedule('0 */2 * * *', () => {
         const runcron =  async () => {
           console.log("2 hours daily")
            await sql.connect(process.env.MSSQL);
@@ -150,7 +150,7 @@ module.exports = () => {
     });
 
     // run everyday at 9am
-    cron.schedule('0 38 09 * * *', () => {
+    cron.schedule('0 00 09 * * *', () => {
       const runcron =  async () => {
         console.log("run every morning")
          await sql.connect(process.env.MSSQL);
