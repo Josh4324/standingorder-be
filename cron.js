@@ -12,11 +12,11 @@ module.exports = () => {
         const runcron =  async () => {
            await sql.connect(process.env.MSSQL);
            const deleteStatus = "false"
-           const check = await sql.query`SELECT * from stand_order_detail WHERE end_date <= ${moment().format("YYYY-MM-DD")}`;
+           const check = await sql.query`SELECT * from stand_order_detail WHERE end_date <= ${moment().format("YYYY-MM-DD")} and delete_status='false'`;
            const checkrecords = check.recordset;
 
            checkrecords.map(async (rec) => {
-            const recupdate = await sql.query`UPDATE stand_order_detail SET delete_status = 'true' WHERE stand_order_id=${rec.stand_order_id}`;
+            const recupdate = await sql.query`UPDATE stand_order_detail SET delete_status = 'true',status='deactivated' WHERE stand_order_id=${rec.stand_order_id}`;
            })
 
            const result = await sql.query`SELECT * from stand_order_detail WHERE next_run_date = ${moment().format("YYYY-MM-DD")} and delete_status = ${deleteStatus} and status='approved'`;
