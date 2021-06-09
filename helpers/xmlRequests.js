@@ -22,6 +22,20 @@ xml.ProvidusInternal = (AN) => {
   </soapenv:Envelope>`;
 };
 
+xml.ProvidusInternal2 = (AN) => {
+   return `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:prov="http://providus.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <prov:getAccount2WithAccountNo>
+         <!--Optional:-->
+         <account_no>${AN}</account_no>
+      </prov:getAccount2WithAccountNo>
+   </soapenv:Body>
+</soapenv:Envelope>
+   
+   `
+}
+
 xml.NIPNameEnq = (DBC, AN, CI, SAC) => {
   return `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
   <soapenv:Header>
@@ -46,10 +60,8 @@ xml.TransferRequest = (DBC, CI, CDA, AN, ON, NRN, REF, AMT, INA, TT) => {
     <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
     <soap:Header>
        <tem:AuthHeader>
-          <!--Optional:-->
-          <tem:UserName>nipConnectest</tem:UserName>
-          <!--Optional:-->
-          <tem:Password>9r0v1du5_t35t</tem:Password>
+         <tem:UserName>nipConnect</tem:UserName>
+         <tem:Password>9r0v1du5_l1v3</tem:Password>
        </tem:AuthHeader>
     </soap:Header>
     <soap:Body>

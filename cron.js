@@ -136,7 +136,7 @@ module.exports = () => {
 
 
              const update1 = await sql.query`UPDATE stand_order_transaction SET num_of_retries = ${num_of_retries} WHERE transaction_id=${record.transaction_id}`;
-       
+
             if (response.data.code[0] == '00'){
                const update2 = await sql.query`UPDATE stand_order_transaction SET status = 'success' WHERE transaction_id=${record.transaction_id}`;
             }else if (num_of_retries === 3) {

@@ -1,0 +1,143 @@
+<html>
+   <style>
+
+      body{
+        background-color: white;
+      }
+
+        *{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+</style>
+
+   <body style="font-family: Garamond; color: #2F444E; font-size: 12px;">
+      <table cellspacing="10" cellpadding="0" border="0" width="900px">
+         <tr>
+            <td align="center"><img src="http://10.10.1.40:8888/warehouse/logo/providusbank-logo-150.jpg" /></td>
+         </tr>
+         <tr>
+            <td align="center" style="font-family: Garamond; color: #2F444E; font-size: 20px; font-weight: bold;">STATEMENT OF ACCOUNT</td>
+         </tr>
+         <tr>
+            <td>
+               <table cellspacing="5" cellpadding="0" border="0" width="100%">
+                  <tr style="vertical-align: top;">
+                     <td width="70%">
+                        <table cellspacing="1" cellpadding="2" border="0" width="100%">
+                           <tr style="vertical-align: top;">
+                              <td width="25%" bgcolor="#FDB913"><strong>CUST. NAME</strong></td>
+                              <td bgcolor="#D9DDDF">{{userInfo.accountName}}</td>
+                           </tr>
+                           <tr style="vertical-align: top;">
+                              <td bgcolor="#FDB913"><strong>ADDRESS</strong></td>
+                              <td bgcolor="#D9DDDF">{{userInfo.address}}</td>
+                           </tr>
+                           <tr style="vertical-align: top;">
+                              <td bgcolor="#FDB913"><strong>ACC. NO.</strong></td>
+                              <td bgcolor="#D9DDDF">{{accountNumber}}</td>
+                           </tr>
+                           <tr style="vertical-align: top;">
+                              <td bgcolor="#FDB913"><strong>ACC. TYPE</strong></td>
+                              <td bgcolor="#D9DDDF">{{userInfo.accountType}}</td>
+                           </tr>
+                           <tr style="vertical-align: top;">
+                              <td bgcolor="#FDB913"><strong>CURRENCY</strong></td>
+                              <td bgcolor="#D9DDDF">{{userInfo.currency}}</td>
+                           </tr>
+                        </table>
+                     </td>
+                     <td width="30%">
+                        <table cellspacing="1" cellpadding="2" border="0" width="100%">
+                           <tr style="vertical-align: top;">
+                              <td width="50%" bgcolor="#FDB913"><strong>START DATE</strong></td>
+                              <td bgcolor="#D9DDDF" align="right">{{startDate}}</td>
+                           </tr>
+                           <tr style="vertical-align: top;">
+                              <td bgcolor="#FDB913"><strong>END DATE</strong></td>
+                              <td bgcolor="#D9DDDF" align="right">{{endDate}}</td>
+                           </tr>
+                           <tr style="vertical-align: top;">
+                              <td bgcolor="#FDB913"><strong>OPENING BAL.</strong></td>
+                              <td bgcolor="#D9DDDF" align="right">{{formatCurrency openingBalance}}</td>
+                           </tr>
+                           <tr style="vertical-align: top;">
+                              <td bgcolor="#FDB913"><strong>CLOSING BAL.</strong></td>
+                              <td bgcolor="#D9DDDF" align="right">{{formatCurrency closingBalance}}</td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <table cellspacing="5" cellpadding="0" border="0" width="100%">
+                  <tr style="vertical-align: top;">
+                     <td width="100%">
+                        <table cellspacing="1" cellpadding="2" border="0" width="100%" style="table-layout: fixed;">
+                           <tr style="vertical-align: top;">
+                              <th width="10%" style="color: #FDB913; background: #2F444E;">TXN DATE</th>
+                              <th width="10%" style="color: #FDB913; background: #2F444E;">VAL DATE</th>
+                              <th style="color: #FDB913; background: #2F444E;">REMARKS</th>
+                              <th width="10%" style="color: #FDB913; background: #2F444E;">DEBIT</th>
+                              <th width="10%" style="color: #FDB913; background: #2F444E;">CREDIT</th>
+                              <th width="10%" style="color: #FDB913; background: #2F444E;">BALANCE</th>
+                           </tr>
+
+                            {{#each transactions as |trans|}}
+
+                           <tr style="vertical-align: top;">
+                              <td width="10%" style="background: #F2F4F4;" align="right">{{substring trans.date}}</td>
+                              <td width="10%" style="background: #F2F4F4;" align="right">{{substring trans.date}}</td>
+                              <td style="background: #F2F4F4; word-wrap: break-word;">{{trans.explanation}} {{trans.narration}}</td>
+                              <td width="15%" style="background: #F2F4F4;" align="right">{{#equal trans.type 'D'}}{{formatCurrency trans.amount}}{{/equal}}</td>
+                              <td width="15%" style="background: #F2F4F4;" align="right">{{#equal trans.type 'C'}}  {{formatCurrency trans.amount}}{{/equal}}</td>
+                              <td width="15%" style="background: #F2F4F4;" align="right">{{formatCurrency trans.runningBal}}</td>
+                           </tr>
+                            {{/each}}
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <table cellspacing="5" cellpadding="0" border="0" width="40%">
+                           <tr style="vertical-align: top;">
+                              <td>
+                                 <table cellspacing="1" cellpadding="2" border="0" width="100%">
+                                    <tr style="vertical-align: top;">
+                                       <td bgcolor="#FDB913"><strong>TOTAL DEBIT</strong></td>
+                                       <td bgcolor="#D9DDDF" align="right">{{formatCurrency totalDebit}}</td>
+                                    </tr>
+                                    <tr style="vertical-align: top;">
+                                       <td bgcolor="#FDB913"><strong>TOTAL CREDIT</strong></td>
+                                       <td bgcolor="#D9DDDF" align="right">{{formatCurrency totalCredit}}</td>
+                                    </tr>
+                                    <tr style="vertical-align: top;">
+                                       <td bgcolor="#FDB913"><strong>DEB. COUNT</strong></td>
+                                       <td bgcolor="#D9DDDF" align="right">{{userInfo.debitCount}}</td>
+                                    </tr>
+                                    <tr style="vertical-align: top;">
+                                       <td bgcolor="#FDB913"><strong>CRED. COUNT</strong></td>
+                                       <td bgcolor="#D9DDDF" align="right">{{userInfo.creditCount}}</td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td style="color: #2F444E; font-size: 11px;">
+                        <p><strong>DISCLAIMER</strong></p>
+                        This is a computer generated statement requiring no signature and it represents our records of your transactions with us. Any exceptions must be advised to the bank immediately. If we do not hear from you within 2 weeks, we will assume that you are in agreement with the details stated.<br />All products are subject to the bank terms and conditions. For any enquiries, please contact our business concierge team on 0700PROVIDUS (070077684387) or send an email to businessconcierge@providusbank.com
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

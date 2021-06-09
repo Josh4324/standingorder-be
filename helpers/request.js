@@ -22,8 +22,7 @@ const xmlParser = (xml, method) => {
       if (err) console.log(err);
       return err;
     });
-    //console.log(obj);
-    return obj;
+    return JSON.parse(obj[0]);
 };
 
 const xmlParser2 = (xml, method) => {
@@ -52,15 +51,28 @@ const xmlParser3 = (xml, method) => {
     return obj;
 };
 
+const xmlParser4 = (xml, method) => {
+  const obj = [];
+  parser(xml, (err, result) => {
+    // console.log({ xml });
+    let d = result['soap:Envelope']['soap:Body'][0]['BranchFundtransfersingleitem_dcResponse'][0]['BranchFundtransfersingleitem_dcResult']
+    obj.push(d[0].split("|")[0]);
+    if (err) console.log(err);
+    return err;
+  });
+  //console.log(obj);
+  return obj;
+};
+
 Helpers.providusAccountCheck = async (accountNumber) => {
     try {
-      const request = await xml.ProvidusInternal(accountNumber);
+      const request = await xml.ProvidusInternal2(accountNumber);
       const response = await axios.post(process.env.ACCOUNT_VALIDATION, request, {
         timeout: 60 * 3 * 1000,
         headers: { 'Content-Type': 'text/xml' },
       });
       const { data } = response;
-      return xmlParser(data, 'ns2:getAccountNameResponse');
+      return xmlParser(data, 'ns2:getAccount2WithAccountNoResponse');
     } catch (error) {
       console.log(error);
     }
@@ -105,13 +117,14 @@ Helpers.transferMoney = async (DBC,  CDA, AN, ON, NRN, REF, AMT, INA) => {
         const CI = process.env.CI;
         const TT = process.env.TT;
         
-        const request = await xml.NIPNameEnq(DBC, CI, CDA, AN, ON, NRN, REF, AMT, INA, TT );
+        const request = await xml.TransferRequest(DBC, CI, CDA, AN, ON, NRN, REF, AMT, INA, TT );
         const response = await axios.post(process.env.ACCOUNT_VALIDATION_EXTERNAL, request, {
         timeout: 60 * 3 * 1000,
         headers: { 'Content-Type': 'text/xml' },
         });
         const { data } = response;
-        return xmlParser3(data, 'BranchFundtransfersingleitem_dcResponse');
+        console.log(data);
+        return xmlParser4(data, 'BranchFundtransfersingleitem_dcResponse');
     } catch (error) {
       console.log(error);
     }

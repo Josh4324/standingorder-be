@@ -13,7 +13,7 @@ Verify.providusInternal = async (req, res, next) => {
         
          const response = await request.providusAccountCheck(accountNumber);
          logger.info(`Request recieved at /api/verify/internal | Request - ${JSON.stringify(req.body)} | Response - ${response}`);
-         return res.status(200).json({accountName : response[0]});
+         return res.status(200).json({accountName : response});
 
     } catch (error) {
         `Request recieved at /api/verify/internal | Request - ${JSON.stringify(req.body)} | Response - ${JSON.stringify(error)}`

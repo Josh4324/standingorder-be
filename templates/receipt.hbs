@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Providus Receipt</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Open Sans';
+      background-image: url({{background}});
+      background-repeat: repeat;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 60px;
+    }
+
+   .header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .title {
+      margin-top: 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+    .info-box {
+    }
+    .data-box {
+      display: flex;
+    }
+  </style>
+  </head>
+
+  
+  <body background={{background}}>
+    <div class="wrapper">
+      <div class="header">
+          <img src="http://10.10.1.40:8888/warehouse/logo/providusbank-logo-150.jpg" />
+        <div class="title">TRANSACTION RECEIPT</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">TRANSACTION DATE: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><strong><span style="font-size:14px;">{{traDate}}</span></strong></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">&nbsp;</span></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">SENDER NAME: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><strong><span style="font-size:14px;">{{senderName}}</span></strong></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">&nbsp;</span></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">SENDER ACCOUNT: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><strong><span style="font-size:14px;">{{senderAccount}}</span></strong></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">&nbsp;</span></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">BENEFICARY NAME:</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong><span style="font-size:14px;">{{beneficiaryName}}</span></strong></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">&nbsp;</span></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">BENEFICARY ACCOUNT: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><strong><span style="font-size:14px;">{{beneficiaryAccount}}</span></strong></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">&nbsp;</span></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">BENEFICARY BANK:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><strong><span style="font-size:14px;">{{beneficiaryBank}}</span></strong></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">&nbsp;</span></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">AMOUNT:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span style='font-size:14px;font-family:"Arial",sans-serif;'>₦</span><strong><span style="font-size:14px;">{{formatCurrency Amount}}</span></strong></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><strong><span style="font-size:14px;">&nbsp;</span></strong></p>
+<p style='margin: 0cm 0cm 0cm 366px; font-size: 15px; font-family: "Trebuchet MS", sans-serif; text-indent: -149.95pt;'><span style="font-size:14px;color:#6E6F6F;">NARRATION: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><strong><span style="font-size:14px;">{{narration}}</span></strong><span style="font-size:14px;color:#6E6F6F;">&nbsp; &nbsp; &nbsp;&nbsp;</span></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><span style="font-size:14px;color:#6E6F6F;">STATUS:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span style='font-size:14px;font-family:"Arial",sans-serif;'></span><strong><span style="font-size:14px;">{{status}}</span></strong></p>
+<p style='margin: 0cm 0cm 0cm 166px; font-size: 15px; font-family: "Trebuchet MS", sans-serif;'><strong><span style="font-size:14px;">&nbsp;</span></strong></p>
+
+
+
+<p style='margin:0cm;font-size:11px;font-family:"Trebuchet MS",sans-serif;'><span style='font-size:15px;font-family:"Arial",sans-serif;'>&nbsp;</span></p>
+<p style='margin:0cm;font-size:11px;font-family:"Trebuchet MS",sans-serif;'><br></p>
+<p style='font-size: 13px; line-height: "20px"; font-family: "Trebuchet MS", sans-serif; margin: 7.05pt 15pt 0.0001pt 150px'><span style="color:#2F444E;">Disclaimer: Please note that transactions may be subject to interruption, transmission&nbsp;</span><span style="color:#2F444E;">blackout, delayed transmission and incorrect data transmission. The Bank is not liable for malfunctions in communications facilities not within its control that may affect the accuracy or timeliness of messages and transactions you send. All transactions are subject to verification and our normal fraud checks.</span></p> 
+  </body>
+</html>
+

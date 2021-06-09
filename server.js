@@ -8,6 +8,8 @@ require('dotenv').config();
 const { v4: uuidv4 } = require('uuid');
 const cron = require('./cron');
 
+app.use('/receipts', express.static('receipts'))
+
 app.use(morgan("common"));
 app.use(cors());
 app.use(helmet());
@@ -28,8 +30,10 @@ app.use(express.json({ limit: '10mb' }));
 
 
 app.use('/', routes);
-cron();
 
+
+
+cron();
 
 app.use(function (req, res, next) {
   const err = new Error('Not Found');

@@ -7,6 +7,7 @@ const verifyToken = require('../middleware/auth').verifyToken;
 router.post("/api/transfer", validation.transferValidationRules(), validation.validate, Transfer.send);
 router.get("/api/transactions/admin",verifyToken, Transfer.getAdminTransactions);
 router.get("/api/transactions",verifyToken, Transfer.getAllTransactions);
+router.post("/api/receipt",verifyToken, Transfer.GenerateReceipt);
 router.get("/api/transactions/inputter",verifyToken, Transfer.getInputerTransactions);
 
 module.exports = router;
