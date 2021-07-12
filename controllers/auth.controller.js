@@ -33,7 +33,6 @@ Auth.Login = async (req, res, next) => {
       }
     );
 
-    console.log(response.data)
 
 
     const {empName, id,emplId, roleaccess,  } = response.data;
@@ -65,8 +64,17 @@ Auth.Login = async (req, res, next) => {
       ${date})`;
   }
 
-  const data = {
-    data : response.data,
+  const userData = await sql.query`SELECT * from stand_order_users where user_id = ${userId}`;
+  if (roleaccess !== userData.recordset[0].role){
+    await sql.query`UPDATE stand_order_users SET role = ${roleaccess} WHERE user_id = ${userId}`;
+  }
+  const userData1 = await sql.query`SELECT * from stand_order_users where user_id = ${userId}`;
+  console.log(userData1.recordset[0])
+  let token = generateToken(userData1.recordset[0]);
+  let data = {
+    token: `JWT ${token}`,
+    responseCode: 200,
+    data: response.data
   }
 
   logger.info(`Request recieved at /api/user/auth/login | Request Object - ${JSON.stringify({userId, ip: clientIP})} | Response - ${JSON.stringify(data)}`);

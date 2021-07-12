@@ -52,3 +52,5 @@ Thu, 27 May 2021 10:38:32 GMT | INFO | verification.log | Request recieved at /a
 Thu, 27 May 2021 10:39:13 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - [object Object] | 
 Thu, 27 May 2021 11:46:15 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - [object Object] | 
 Thu, 27 May 2021 11:46:41 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - [object Object] | 
+Wed, 07 Jul 2021 07:26:25 GMT | INFO | verification.log | Request recieved at /api/verify/internal | Request - {"accountNumber":"1700595775"} | Response - [object Object] | 
+Wed, 07 Jul 2021 07:26:38 GMT | INFO | verification.log | Request recieved at /api/verify/external | Request - {"DBC":"000013","AN":"0173768670","SAC":"0173768670"} | Response - ADESANYA  JOSHUA AYODEJI | 

@@ -59,10 +59,6 @@ StandOrder.createOrder = async (req, res, next) => {
         ${branchId},
         ${new_date})`;
         
-        Audit.createAudit('standorder','/api/standorder', 'CREATE', 'Success',  `${JSON.stringify(req.body)}`, `${JSON.stringify({
-          status: "Success",
-          message: "Stand Order created successfully"
-       })}`)
 
         logger.info(`POST Request recieved at /api/standorder | userId - ${userId} | Request Object - ${JSON.stringify(req.body)} | Response - ${JSON.stringify({
             status: "Success",
@@ -73,7 +69,6 @@ StandOrder.createOrder = async (req, res, next) => {
        message: "Stand Order created successfully"
     });
   } catch (error) {
-    Audit.createAudit('standorder','/api/standorder', 'CREATE', 'Error',  `${JSON.stringify(req.body)}`, `${JSON.stringify(error)}`)
     logger.error(`POST Request recieved at /api/standorder | userId - ${userId} | Request Object - ${JSON.stringify(req.body)} | Response - ${JSON.stringify(error)}`)
     return res.status(500).json({error});
   }
@@ -140,11 +135,6 @@ StandOrder.getAdminAllStandingOrder = async (req, res, next) => {
       branchId = res.decoded.branch_id
       await sql.connect(process.env.MSSQL);
       const result = await sql.query`SELECT * from stand_order_detail ORDER BY date DESC`;
-      Audit.createAudit('standorder','/api/standorder/admin', 'RETRIEVE', 'Success',  `${JSON.stringify(req.body)}`, `${JSON.stringify(error)}`)
-          logger.info(`GET Request recieved at /api/standorder/admin | userId - ${userId} | Request Object - NONE | Response - ${JSON.stringify({
-            status: "Success",
-            data: result.recordset
-           })}`);
       return res.status(200).json({
          status: "Success",
          data: result.recordset
