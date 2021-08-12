@@ -154,7 +154,6 @@ Transfer.getInputerTransactions = async (req, res, next) => {
 Transfer.GenerateReceipt = async (req, res, next) => {
     try {
       const { transId, standOrderId } = req.body;
-      console.log(req.body)
 
       await sql.connect(process.env.MSSQL);
       userId = res.decoded.user_id;
@@ -188,7 +187,6 @@ Transfer.GenerateReceipt = async (req, res, next) => {
         format: 'A4',
         printBackground: true,
       });
-      console.log('done...');
   
       return res.status(200).json(path);
     } catch (error) {

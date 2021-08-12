@@ -4,7 +4,6 @@ const Auth = require('./auth.routes');
 const Transfer = require('./transferMoney.routes');
 const Verify = require('./verifyAccount.routes');
 const StandOrder = require('./standOrder.routes');
-const Audit = require('./audit.routes');
 const LoggerService = require('../middleware/logger');
 const logger = new LoggerService("api");
 
@@ -13,7 +12,6 @@ router.use(Auth);
 router.use(Transfer);
 router.use(Verify);
 router.use(StandOrder);
-router.use(Audit);
 
 
 router.get('/api', function (req, res, next) {
